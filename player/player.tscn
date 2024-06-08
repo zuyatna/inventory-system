@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://d3n2csawwe8vw"]
+
+[ext_resource type="Texture2D" uid="uid://csw6hpewqhj6m" path="res://player/sprites/person.png" id="1_6fxyr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qvdb3"]
+atlas = ExtResource("1_6fxyr")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dceh7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qvdb3")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gxgj8"]
+radius = 4.0
+height = 24.0
+
+[node name="Player" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_dceh7")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -3)
+shape = SubResource("CapsuleShape2D_gxgj8")
