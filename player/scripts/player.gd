@@ -3,6 +3,7 @@ extends CharacterBody2D
 @export var speed = 200
 
 @onready var animated_sprite = $AnimatedSprite2D
+@onready var interact_ui = $InteractUI
 
 func _ready():
 	Global.set_player_reference(self)

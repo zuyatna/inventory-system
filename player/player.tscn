@@ -1,7 +1,8 @@
-[gd_scene load_steps=30 format=3 uid="uid://d3n2csawwe8vw"]
+[gd_scene load_steps=31 format=3 uid="uid://d3n2csawwe8vw"]
 
 [ext_resource type="Texture2D" uid="uid://csw6hpewqhj6m" path="res://player/sprites/person.png" id="1_6fxyr"]
 [ext_resource type="Script" path="res://player/scripts/player.gd" id="1_y71hi"]
+[ext_resource type="FontFile" uid="uid://bi04iecmbt37l" path="res://fonts/ARCADECLASSIC.TTF" id="3_wom0i"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qvdb3"]
 atlas = ExtResource("1_6fxyr")
@@ -210,7 +211,7 @@ animations = [{
 radius = 4.0
 height = 24.0
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["Player"]]
 script = ExtResource("1_y71hi")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -223,3 +224,35 @@ shape = SubResource("CapsuleShape2D_g5rxc")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3, 3)
+
+[node name="InteractUI" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="InteractUI"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -300.0
+offset_top = -50.0
+grow_horizontal = 0
+grow_vertical = 0
+color = Color(0.192157, 0.376471, 0.321569, 0.839216)
+
+[node name="Label" type="Label" parent="InteractUI/ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -72.5
+offset_top = -11.5
+offset_right = 72.5
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_wom0i")
+theme_override_font_sizes/font_size = 30
+text = "Press \"E\" to pickup"
