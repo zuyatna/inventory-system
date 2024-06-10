@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bdvcj84bjb0ak"]
+
+[ext_resource type="Texture2D" uid="uid://cpsjaebpas6w4" path="res://items/icons/icon1.png" id="1_sul5v"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3evs5"]
+
+[node name="Inventory_Item" type="Node2D"]
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_3evs5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_sul5v")
