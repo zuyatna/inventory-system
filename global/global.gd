@@ -13,12 +13,14 @@ func add_item(item):
 		if inventory[i] != null and inventory[i]["type"] == item["type"] and inventory[i]["effect"] == item["effect"]:
 			inventory[i]["quantity"] += item["quantity"]
 			inventory_updated.emit()
+			print("item added: ", inventory)
 			return true
 		elif inventory[i] == null:
 			inventory[i] = item
 			inventory_updated.emit()
+			print("item added: ", inventory)
 			return true
-		return false
+	return false
 	
 func remove_item():
 	inventory_updated.emit()
