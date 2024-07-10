@@ -208,9 +208,8 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g5rxc"]
-radius = 4.0
-height = 24.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_y600l"]
+radius = 7.07107
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 process_mode = 3
@@ -221,8 +220,7 @@ sprite_frames = SubResource("SpriteFrames_dceh7")
 animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -3)
-shape = SubResource("CapsuleShape2D_g5rxc")
+shape = SubResource("CircleShape2D_y600l")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(3, 3)
